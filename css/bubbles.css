@@ -1,4 +1,4 @@
-/* 
+
   .bubble {
     display: block;
     border-radius: 100%;
@@ -1369,7 +1369,7 @@
     }
   }
   .bubble:nth-child(48) {
-    background: radial-gradient(ellipse at top right, #b8c6c6 0%, #30b3d3 46%, #20628c 100%);
+    background: radial-gradient(ellipse at top right, #b8c6c6 0%, #30b3d3 46%, #8c2068 100%);
     width: 56px;
     height: 56px;
     left: 83vw;
@@ -1398,7 +1398,7 @@
     }
   }
   .bubble:nth-child(49) {
-    background: radial-gradient(ellipse at center, #b8c6c6 0%, #30b3d3 46%, #20628c 100%);
+    background: radial-gradient(ellipse at center, #9e5918 0%, #30b3d3 46%, #20628c 100%);
     width: 100px;
     height: 100px;
     left: 48vw;
@@ -1455,4 +1455,4 @@
       opacity: 0;
     }
   }
-   */
+  
