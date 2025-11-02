@@ -81,8 +81,8 @@ const ChatBot = () => {
           className="w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transition-all animate-pulse ring-4 ring-white/20 hover:ring-white/30 m-4 md:m-0"
         >
           <img
-            src="src/assets/photo.jpg"
-            alt="Yogesh Kushawah"
+            src="https://avatars.githubusercontent.com/u/112820027?v=4"
+            alt="Yogesh Kushwah"
             className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-white object-cover"
           />
         </button>
@@ -96,7 +96,7 @@ const ChatBot = () => {
             <div className="relative">
               <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center overflow-hidden border-2 border-white">
                 <img
-                  src="src/assets/photo.jpg"
+                  src="https://avatars.githubusercontent.com/u/112820027?v=4"
                   alt="Yogesh Kushawah"
                   className="w-full h-full object-cover"
                 />

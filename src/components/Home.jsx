@@ -20,7 +20,7 @@ function Home() {
     if ("speechSynthesis" in window && !isMuted) {
       const synth = window.speechSynthesis;
       const utterance = new SpeechSynthesisUtterance(
-        "Hi, welcome to Vivek Web Site."
+        "Hi! I'm Yogesh's virtual assistant. Ask me anything about his skills, projects, or work experience!"
       );
 
       const voices = synth.getVoices();
@@ -62,7 +62,7 @@ function Home() {
     if (isMuted) {
       speakGreeting();
     }
-   };
+  };
 
   return (
     <>
@@ -93,47 +93,71 @@ function Home() {
 
         {/* Visual Greeting with fade-in animation */}
         <div
-          className={`text-center mb-8 transition-opacity duration-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`text-center mb-8 transition-opacity duration-1000 ${isVisible ? "opacity-100" : "opacity-0"
+            }`}
         >
-          <p className="text-lg text-red-900 hover:text-gray-800 duration-100">
+          {/* <p className="text-lg text-red-900 hover:text-gray-800 duration-100">
             👋 Hi, welcome to Yogesh WebSite.
-          </p>
+          </p> */}
           {!("speechSynthesis" in window) && (
             <p className="text-sm text-red-500">
               (Voice greeting not supported in this browser.)
             </p>
           )}
-         
+
         </div>
 
         <div className="flex flex-col md:flex-row relative z-10">
           <div
-            className={`md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1 transition-all duration-1000 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-full opacity-0"
-            }`}
+            className={`md:w-1/2 mt-12 md:mt-24 space-y-2 order-2 md:order-1 transition-all duration-1000 ${isVisible
+              ? "translate-x-0 opacity-100"
+              : "-translate-x-full opacity-0"
+              }`}
           >
             <span className="text-xl text-gray-700 font-medium">
               👋 Transforming Ideas into Digital Reality
             </span>
             <div className="flex space-x-1 text-2xl md:text-4xl">
-              <h1>Hello, I'm a</h1>
+              <h1>Hello, I'm a </h1>
+            
               <ReactTyped
-                className="text-red-700 font-bold"
-                strings={["Developer", "Programmer", "Coder"]}
+                className="text-red-700 font-bold text-xl sm:text-2xl md:text-3xl"
+                strings={[
+                  "Software Engineer",
+                  "MERN Developer",
+                  "Frontend Engineer",
+                  "Backend Engineer",
+                  "Full Stack Dev",
+                  "AI Enthusiast",
+                ]}
                 typeSpeed={40}
                 backSpeed={50}
                 loop={true}
               />
+
+              {/* <ReactTyped
+  className="text-red-700 font-bold text-xl sm:text-2xl md:text-3xl whitespace-nowrap overflow-hidden"
+  strings={[
+    "Software Engineer",
+    "MERN Developer",
+    "Frontend Engineer",
+    "Backend Engineer",
+    "Full Stack Dev",
+    "AI Enthusiast",
+    ,
+  ]}
+  typeSpeed={40}
+  backSpeed={50}
+  loop={true}
+/> */}
+
+
             </div>
             <br />
             <p className="text-sm md:text-md text-justify text-gray-700 leading-relaxed hover:text-gray-900 transition-colors duration-300">
-             I'm Yogesh Kushawah, a Full Stack Web Developer with 2 years of professional experience in building scalable web applications using the MERN stack. With expertise in both front-end and back-end technologies, I've led development teams, delivered AI-integrated platforms, and optimized full-stack solutions for real-world business challenges.
+              I'm Yogesh Kushawah, a Full Stack Web Developer with 2 years of professional experience in building scalable web applications using the MERN stack. With expertise in both front-end and back-end technologies, I've led development teams, delivered AI-integrated platforms, and optimized full-stack solutions for real-world business challenges.
 
-Currently pursuing my Master of Computer Applications (MCA) from Vellore Institute of Technology while working as a Full Stack Developer at Qurocity, I'm passionate about creating impactful and efficient web solutions.
+              Currently pursuing my Master of Computer Applications (MCA) from Vellore Institute of Technology while working as a Full Stack Developer at Qurocity, I'm passionate about creating impactful and efficient web solutions.
             </p>
             <br />
             <div className="flex flex-col items-center md:flex-row justify-between space-y-6 md:space-y-0">
@@ -179,19 +203,18 @@ Currently pursuing my Master of Computer Applications (MCA) from Vellore Institu
             </div>
           </div>
           <div
-            className={`md:w-1/2 md:ml-48 md:mt-20 mt-8 order-1 transition-all duration-1000 ${
-              isVisible
-                ? "translate-x-0 opacity-100"
-                : "translate-x-full opacity-0"
-            }`}
+            className={`md:w-1/2 md:ml-48 md:mt-20 mt-8 order-1 transition-all duration-1000 ${isVisible
+              ? "translate-x-0 opacity-100"
+              : "translate-x-full opacity-0"
+              }`}
           >
- <div className="flex justify-center items-center">
-  <img
-    src={pic}
-    className="rounded-full w-64 h-64 md:w-[400px] md:h-[400px] transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-3xl ring-4 ring-blue-100 hover:ring-blue-300"
-    alt="Vivek's Profile"
-  />
-</div>
+            <div className="flex justify-center items-center">
+              <img
+                src={pic}
+                className="rounded-full w-64 h-64 md:w-[400px] md:h-[400px] transform hover:scale-105 transition-all duration-500 shadow-2xl hover:shadow-3xl ring-4 ring-blue-100 hover:ring-blue-300"
+                alt="Vivek's Profile"
+              />
+            </div>
 
           </div>
         </div>
