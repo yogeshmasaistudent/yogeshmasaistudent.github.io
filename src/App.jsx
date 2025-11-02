@@ -12,6 +12,7 @@ function App() {
   return (
     <>
       <div>
+      {/* it's new portfolio section */}
         <Navbar />
         <Home />
         <About />
