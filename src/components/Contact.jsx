@@ -39,7 +39,7 @@ function Contact() {
 
 
   return (
-    <div name="Contact" className="min-h-screen w-full bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-8 sm:py-16 px-4">
+    <div name="Contact" className="min-h-screen w-full to-indigo-50 py-8 sm:py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">

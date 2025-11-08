@@ -24,7 +24,7 @@ function About() {
 
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            🌟 What Sets Me Apart
+          What Sets Me Apart
           </h2>
 
           <div className="space-y-4">
@@ -94,7 +94,7 @@ function About() {
         <br />
         
         <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8 border-b-2 border-blue-600 inline-block pb-2">
-          🎓 Education & Training
+           Education & Training
         </h2>
         
         <div className="mt-4 space-y-3">
@@ -131,7 +131,7 @@ function About() {
         <br />
         
         <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8 border-b-2 border-blue-600 inline-block pb-2">
-          💻 Technical Skills & Expertise
+           Technical Skills & Expertise
         </h2>
         
         <div className="mt-4 space-y-4">
@@ -188,7 +188,7 @@ function About() {
         <br />
         
         <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8 border-b-2 border-blue-600 inline-block pb-2">
-          🎯 Professional Journey
+          Professional Journey
         </h2>
         
         <div className="mt-4 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">

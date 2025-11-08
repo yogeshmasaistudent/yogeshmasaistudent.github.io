@@ -15,11 +15,9 @@ import mysql from "../assets/experience/mysql.png";
 import github from "../assets/experience/github.png";
 import aws from "../assets/experience/aws.png";
 
-
 function Experience() {
   const [visibleCards, setVisibleCards] = useState([]);
   const cardRefs = useRef([]);
-
 
   const cardItem = [
     { id: 1, logo: html, name: "HTML", color: "from-orange-500 to-red-500" },
@@ -38,7 +36,6 @@ function Experience() {
     { id: 14, logo: aws, name: "AWS", color: "from-yellow-600 to-orange-600" },
     { id: 15, logo: github, name: "Github", color: "from-gray-700 to-gray-900" },
   ];
-
 
   const workExperience = [
     {
@@ -105,15 +102,18 @@ function Experience() {
     },
   ];
 
-
   // State to track which logos failed to load
   const [failedLogos, setFailedLogos] = useState({});
-
 
   const handleImageError = (companyId) => {
     setFailedLogos((prev) => ({ ...prev, [companyId]: true }));
   };
 
+  // Use the first experience's gradient as the default UI gradient for all cards
+  const defaultGradient =
+    workExperience && workExperience.length > 0
+      ? workExperience[0].gradient
+      : "from-purple-600 to-pink-600";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -122,7 +122,11 @@ function Experience() {
           if (entry.isIntersecting) {
             const index = cardRefs.current.indexOf(entry.target);
             setTimeout(() => {
-              setVisibleCards((prev) => [...prev, index]);
+              setVisibleCards((prev) => {
+                // avoid duplicates
+                if (prev.includes(index)) return prev;
+                return [...prev, index];
+              });
             }, index * 150);
           }
         });
@@ -130,20 +134,17 @@ function Experience() {
       { threshold: 0.1 }
     );
 
-
     cardRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
 
-
     return () => observer.disconnect();
   }, []);
-
 
   return (
     <div
       name="Experience"
-      className="w-full min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-8 sm:py-16 px-4 overflow-hidden"
+      className="w-full min-h-screen to-indigo-50 py-8 sm:py-16 px-4 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto w-full">
         {/* Professional Experience Section */}
@@ -159,25 +160,19 @@ function Experience() {
             </div>
           </div>
 
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-6xl mx-auto w-full">
             {workExperience.map((exp, index) => (
               <div
                 key={exp.id}
                 ref={(el) => (cardRefs.current[index] = el)}
                 className={`w-full transition-all duration-700 ${
-                  visibleCards.includes(index)
-                    ? "opacity-100 translate-x-0"
-                    : "opacity-0"
+                  visibleCards.includes(index) ? "opacity-100 translate-x-0" : "opacity-0"
                 }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 overflow-hidden h-full w-full">
-                  {/* Gradient Top Bar */}
-                  <div
-                    className={`h-2 bg-gradient-to-r ${exp.gradient}`}
-                  ></div>
-
+                  {/* Gradient Top Bar - uses defaultGradient */}
+                  <div className={`h-2 bg-gradient-to-r ${defaultGradient}`}></div>
 
                   {/* Content */}
                   <div className="p-4 sm:p-6 w-full">
@@ -188,9 +183,9 @@ function Experience() {
                         <div className="relative flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12">
                           {/* Gradient Border Ring */}
                           <div
-                            className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} rounded-xl opacity-20 group-hover:opacity-100 transition-opacity duration-300`}
+                            className={`absolute inset-0 bg-gradient-to-br ${defaultGradient} rounded-xl opacity-20 group-hover:opacity-100 transition-opacity duration-300`}
                           ></div>
-                          
+
                           {/* White Background Circle */}
                           <div className="absolute inset-[2px] bg-white rounded-xl shadow-inner flex items-center justify-center overflow-hidden">
                             {failedLogos[exp.id] ? (
@@ -205,17 +200,15 @@ function Experience() {
                             )}
                           </div>
 
-
                           {/* Hover Glow */}
                           <div
-                            className={`absolute inset-0 bg-gradient-to-br ${exp.gradient} rounded-xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300 -z-10`}
+                            className={`absolute inset-0 bg-gradient-to-br ${defaultGradient} rounded-xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300 -z-10`}
                           ></div>
                         </div>
 
-
                         <div className="flex-1 min-w-0 overflow-hidden">
                           <h2
-                            className={`text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r ${exp.gradient} bg-clip-text text-transparent mb-1 leading-tight break-words`}
+                            className={`text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r ${defaultGradient} bg-clip-text text-transparent mb-1 leading-tight break-words`}
                           >
                             {exp.role}
                           </h2>
@@ -226,24 +219,22 @@ function Experience() {
                       </div>
                     </div>
 
-
                     {/* Duration & Type */}
                     <div className="flex items-center gap-2 mb-3 sm:mb-4 flex-wrap w-full">
                       <span className="text-[10px] sm:text-xs text-gray-600 bg-gray-100 px-2 sm:px-3 py-1 rounded-full font-medium whitespace-nowrap">
                         📅 {exp.duration}
                       </span>
                       <span
-                        className={`text-[10px] sm:text-xs bg-gradient-to-r ${exp.gradient} text-white px-2 sm:px-3 py-1 rounded-full font-semibold shadow-md whitespace-nowrap`}
+                        className={`text-[10px] sm:text-xs bg-gradient-to-r ${defaultGradient} text-white px-2 sm:px-3 py-1 rounded-full font-semibold shadow-md whitespace-nowrap`}
                       >
                         {exp.type}
                       </span>
                     </div>
 
-
                     {/* Achievements */}
                     <div className="w-full">
                       <h3 className="text-[10px] sm:text-xs font-bold text-gray-500 uppercase tracking-wide mb-2 sm:mb-3 flex items-center gap-2">
-                        <span className={`w-3 sm:w-4 md:w-6 h-0.5 bg-gradient-to-r ${exp.gradient} flex-shrink-0`}></span>
+                        <span className={`w-3 sm:w-4 md:w-6 h-0.5 bg-gradient-to-r ${defaultGradient} flex-shrink-0`}></span>
                         <span className="whitespace-nowrap">Key Highlights</span>
                       </h3>
                       <ul className="space-y-1.5 sm:space-y-2 w-full">
@@ -258,7 +249,7 @@ function Experience() {
                             }}
                           >
                             <span
-                              className={`flex-shrink-0 w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full bg-gradient-to-br ${exp.gradient} flex items-center justify-center text-white text-[10px] sm:text-xs font-bold mt-0.5 group-hover/item:scale-125 transition-transform duration-300`}
+                              className={`flex-shrink-0 w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 rounded-full bg-gradient-to-br ${defaultGradient} flex items-center justify-center text-white text-[10px] sm:text-xs font-bold mt-0.5 group-hover/item:scale-125 transition-transform duration-300`}
                             >
                               ✓
                             </span>
@@ -271,10 +262,9 @@ function Experience() {
                     </div>
                   </div>
 
-
                   {/* Hover Glow Effect */}
                   <div
-                    className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${exp.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none`}
+                    className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${defaultGradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none`}
                   ></div>
                 </div>
               </div>
@@ -282,11 +272,10 @@ function Experience() {
           </div>
         </div>
 
-
         {/* Technologies Section */}
         <div className="w-full">
           <div className="text-center mb-8 sm:mb-12">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent px-2">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent px-2">
               Tech Stack
             </h1>
             <div className="flex items-center justify-center gap-2 sm:gap-3 px-2">
@@ -295,7 +284,6 @@ function Experience() {
               <div className="h-1 w-12 sm:w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
             </div>
           </div>
-
 
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6 max-w-5xl mx-auto w-full px-2">
             {cardItem.map(({ id, logo, name, color }, index) => (
@@ -311,7 +299,6 @@ function Experience() {
                   className={`absolute inset-0 bg-gradient-to-r ${color} rounded-xl sm:rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500 pointer-events-none`}
                 ></div>
 
-
                 {/* Card */}
                 <div className="relative flex flex-col items-center justify-center bg-white rounded-xl sm:rounded-2xl aspect-square shadow-md p-2 sm:p-3 md:p-4 cursor-pointer transform group-hover:scale-105 transition-all duration-500 border-2 border-transparent group-hover:border-white w-full">
                   {/* Logo */}
@@ -323,14 +310,12 @@ function Experience() {
                     />
                   </div>
 
-
                   {/* Name */}
                   <div
                     className={`text-center font-bold text-[9px] sm:text-[10px] md:text-xs bg-gradient-to-r ${color} bg-clip-text text-transparent leading-tight break-words w-full px-1`}
                   >
                     {name}
                   </div>
-
 
                   {/* Sparkle */}
                   <div className="absolute top-1 right-1 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-yellow-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping pointer-events-none"></div>
@@ -340,7 +325,6 @@ function Experience() {
           </div>
         </div>
       </div>
-
 
       {/* Keyframe Animations */}
       <style jsx>{`
@@ -355,7 +339,6 @@ function Experience() {
           }
         }
 
-
         @keyframes techFloat {
           0%,
           100% {
@@ -369,6 +352,5 @@ function Experience() {
     </div>
   );
 }
-
 
 export default Experience;

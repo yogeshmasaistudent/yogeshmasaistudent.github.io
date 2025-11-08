@@ -6,10 +6,8 @@ import Yogasana from "../assets/portfolio/Yogasana.png";
 import PetVet from "../assets/portfolio/petVerce.png";
 import RentEasy from "../assets/portfolio/RentEasy.png";
 
-
 const Portfolios = () => {
   const [activeTab, setActiveTab] = useState("all");
-
 
   // Professional Projects (Company Work)
   const professionalProjects = [
@@ -18,7 +16,8 @@ const Portfolios = () => {
       name: "Qurocity AI Platform",
       category: "professional",
       type: "🏢 Company Project",
-      description: "AI-powered educational platform developed at Qurocity. Leading full-stack development using MERN stack with OpenAI API integration.",
+      description:
+        "AI-powered educational platform developed at Qurocity. Leading full-stack development using MERN stack with OpenAI API integration.",
       tech: "React.js, Node.js, MongoDB, OpenAI API, Express.js",
       demoLink: "https://qurocity.ai/",
       codeLink: null, // Private company code
@@ -30,7 +29,8 @@ const Portfolios = () => {
       name: "VerbiQ AI",
       category: "professional",
       type: "🏢 Company Project",
-      description: "Language-specific job opportunities platform offering roles in French, British English, and other linguistic specializations.",
+      description:
+        "Language-specific job opportunities platform offering roles in French, British English, and other linguistic specializations.",
       tech: "React.js, Node.js, RESTful APIs, MongoDB",
       demoLink: "https://verbiq.ai/",
       codeLink: null, // Private company code
@@ -42,15 +42,15 @@ const Portfolios = () => {
       name: "Kitchen Kingdom AI",
       category: "professional",
       type: "💼 Featured Project",
-      description: "AI-powered recipe generation platform delivering personalized dishes using OpenAI API integration with responsive UI built using React.js and Chakra UI.",
+      description:
+        "AI-powered recipe generation platform delivering personalized dishes using OpenAI API integration with responsive UI built using React.js and Chakra UI.",
       tech: "React.js, OpenAI API, Chakra UI, Node.js",
       demoLink: "https://kitchen-kingdom-ai.vercel.app",
-      codeLink: "https://github.com/yogeshmasaist/Kitchen-Kingdom-AI",
+      codeLink: "https://github.com/yogeshmasaistudent/Kitchen-Kingdom-AI",
       badge: "AI Powered",
       gradient: "from-orange-600 to-red-600",
-    }
+    },
   ];
-
 
   // Personal/Learning Projects
   const personalProjects = [
@@ -60,7 +60,8 @@ const Portfolios = () => {
       category: "personal",
       type: "🚀 Full Stack",
       src: Yogasana,
-      description: "Yogasana Tracker designed for tracking & sharing yogasana with community groups. Built with Firebase for real-time data sync.",
+      description:
+        "Yogasana Tracker designed for tracking & sharing yogasana with community groups. Built with Firebase for real-time data sync.",
       tech: "React.js, Firebase, Google API, Real-time Database",
       demoLink: "https://cerulean-concha-368de4.netlify.app/",
       codeLink: "https://github.com/yogeshmasaistudent/Yogasana_Tracker",
@@ -73,7 +74,8 @@ const Portfolios = () => {
       category: "personal",
       type: "🚀 Full Stack",
       src: PetVet,
-      description: "PetVerse is a simple and fun pet care management app that helps pet owners stay organized with appointment scheduling and health tracking.",
+      description:
+        "PetVerse is a simple and fun pet care management app that helps pet owners stay organized with appointment scheduling and health tracking.",
       tech: "React.js, Node.js, MongoDB, Express.js",
       demoLink: "https://candid-mandazi-949e6c.netlify.app/",
       codeLink: "https://github.com/yogeshmasaistudent/zoocoAssignment",
@@ -86,18 +88,23 @@ const Portfolios = () => {
       category: "personal",
       type: "🚀 Full Stack",
       src: RentEasy,
-      description: "Smart Tenant-Landlord Platform with AI-Powered assistance for seamless property management and appointment scheduling.",
+      description:
+        "Smart Tenant-Landlord Platform with AI-Powered assistance for seamless property management and appointment scheduling.",
       tech: "React.js, MongoDB, Firebase, AI Integration",
       demoLink: "https://renteasy-appointment.netlify.app/",
       codeLink: "https://github.com/yogeshmasaistudent/Tenant-Landlord-master",
       badge: "AI Features",
       gradient: "from-teal-500 to-green-600",
-    }
+    },
   ];
-
 
   const allProjects = [...professionalProjects, ...personalProjects];
 
+  // Use the first project's gradient as the shared gradient for all UI elements in project cards
+  const defaultGradient =
+    allProjects && allProjects.length > 0
+      ? allProjects[0].gradient
+      : "from-purple-600 to-pink-600";
 
   const filteredProjects =
     activeTab === "all"
@@ -106,9 +113,8 @@ const Portfolios = () => {
       ? professionalProjects
       : personalProjects;
 
-
   return (
-    <div name="portfolio" className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 py-8 sm:py-16 px-4">
+    <div name="Projects" className="min-h-screen  py-8 sm:py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
@@ -122,14 +128,13 @@ const Portfolios = () => {
           </div>
         </div>
 
-
         {/* Filter Tabs - Responsive Wrap */}
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2">
           <button
             onClick={() => setActiveTab("all")}
             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
               activeTab === "all"
-                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg scale-105"
+                ? `bg-gradient-to-r ${defaultGradient} text-white shadow-lg scale-105`
                 : "bg-white text-gray-700 hover:shadow-md"
             }`}
           >
@@ -140,7 +145,7 @@ const Portfolios = () => {
             onClick={() => setActiveTab("professional")}
             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
               activeTab === "professional"
-                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg scale-105"
+                ? `bg-gradient-to-r ${defaultGradient} text-white shadow-lg scale-105`
                 : "bg-white text-gray-700 hover:shadow-md"
             }`}
           >
@@ -151,7 +156,7 @@ const Portfolios = () => {
             onClick={() => setActiveTab("personal")}
             className={`px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 whitespace-nowrap ${
               activeTab === "personal"
-                ? "bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg scale-105"
+                ? `bg-gradient-to-r ${defaultGradient} text-white shadow-lg scale-105`
                 : "bg-white text-gray-700 hover:shadow-md"
             }`}
           >
@@ -159,7 +164,6 @@ const Portfolios = () => {
             <span className="sm:hidden">Personal ({personalProjects.length})</span>
           </button>
         </div>
-
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
@@ -169,8 +173,7 @@ const Portfolios = () => {
               className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden"
             >
               {/* Gradient Top Bar */}
-              <div className={`h-2 bg-gradient-to-r ${project.gradient}`}></div>
-
+              <div className={`h-2 bg-gradient-to-r ${defaultGradient}`}></div>
 
               {/* Project Image (if available) */}
               {project.src && (
@@ -184,46 +187,31 @@ const Portfolios = () => {
                 </div>
               )}
 
-
               {/* Content */}
               <div className="p-4 sm:p-6">
                 {/* Badge & Type */}
                 <div className="flex items-center justify-between mb-3 gap-2">
-                  <span className="text-xs font-semibold text-gray-500 truncate">
-                    {project.type}
-                  </span>
+                  <span className="text-xs font-semibold text-gray-500 truncate">{project.type}</span>
                   <span
-                    className={`text-xs bg-gradient-to-r ${project.gradient} text-white px-2 sm:px-3 py-1 rounded-full font-semibold whitespace-nowrap flex-shrink-0`}
+                    className={`text-xs bg-gradient-to-r ${defaultGradient} text-white px-2 sm:px-3 py-1 rounded-full font-semibold whitespace-nowrap flex-shrink-0`}
                   >
                     {project.badge}
                   </span>
                 </div>
 
-
                 {/* Title */}
-                <h2
-                  className={`text-lg sm:text-xl font-bold bg-gradient-to-r ${project.gradient} bg-clip-text text-transparent mb-3`}
-                >
+                <h2 className={`text-lg sm:text-xl font-bold bg-gradient-to-r ${defaultGradient} bg-clip-text text-transparent mb-3`}>
                   {project.name}
                 </h2>
 
-
                 {/* Description */}
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-
+                <p className="text-gray-600 text-sm mb-4 line-clamp-3">{project.description}</p>
 
                 {/* Tech Stack */}
                 <div className="mb-4">
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">
-                    Tech Stack
-                  </p>
-                  <p className="text-xs text-gray-600 leading-relaxed">
-                    {project.tech}
-                  </p>
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Tech Stack</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{project.tech}</p>
                 </div>
-
 
                 {/* Buttons */}
                 <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
@@ -231,7 +219,7 @@ const Portfolios = () => {
                     href={project.demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`flex-1 bg-gradient-to-r ${project.gradient} text-white text-center py-2 px-4 rounded-lg font-medium text-sm hover:shadow-lg transition-all duration-300 hover:scale-105`}
+                    className={`flex-1 bg-gradient-to-r ${defaultGradient} text-white text-center py-2 px-4 rounded-lg font-medium text-sm hover:shadow-lg transition-all duration-300 hover:scale-105`}
                   >
                     Live Demo
                   </a>
@@ -253,10 +241,9 @@ const Portfolios = () => {
                 </div>
               </div>
 
-
               {/* Hover Glow Effect */}
               <div
-                className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${project.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
+                className={`absolute -bottom-20 -right-20 w-40 h-40 bg-gradient-to-br ${defaultGradient} rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500`}
               ></div>
             </div>
           ))}
@@ -265,6 +252,5 @@ const Portfolios = () => {
     </div>
   );
 };
-
 
 export default Portfolios;
