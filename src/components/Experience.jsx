@@ -274,7 +274,9 @@ function Experience() {
 
         {/* Technologies Section */}
         <div className="w-full">
-          <div className="text-center mb-8 sm:mb-12">
+          <div 
+          name="Skills"
+           className="text-center mb-8 sm:mb-12">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent px-2">
               Tech Stack
             </h1>
