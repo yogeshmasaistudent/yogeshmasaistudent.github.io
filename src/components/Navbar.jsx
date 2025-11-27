@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from "react";
 import pic from "../assets/photo.jpg";
 import { AiOutlineMenu } from "react-icons/ai";

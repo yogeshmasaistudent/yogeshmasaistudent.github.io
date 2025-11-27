@@ -1,4 +1,3 @@
-import React from "react";
 
 function About() {
   return (
@@ -30,7 +29,7 @@ function About() {
           <div className="space-y-4">
             <div className="p-4 bg-blue-50 rounded-lg border-l-4 border-blue-600">
               <h3 className="text-lg font-semibold text-blue-700 mb-2">
-                🔥 Team Leadership Excellence
+                 Team Leadership Excellence
               </h3>
               <p className="text-gray-700">
                 Successfully led and mentored <span className="font-semibold">10-member development teams</span>, 
@@ -40,7 +39,7 @@ function About() {
 
             <div className="p-4 bg-purple-50 rounded-lg border-l-4 border-purple-600">
               <h3 className="text-lg font-semibold text-purple-700 mb-2">
-                🤖 AI Integration Mastery
+                AI Integration Mastery
               </h3>
               <p className="text-gray-700">
                 Pioneered <span className="font-semibold">AI-powered platforms</span> leveraging OpenAI APIs, 
@@ -50,7 +49,7 @@ function About() {
 
             <div className="p-4 bg-green-50 rounded-lg border-l-4 border-green-600">
               <h3 className="text-lg font-semibold text-green-700 mb-2">
-                ⚡ Performance Optimization Expert
+                 Performance Optimization Expert
               </h3>
               <p className="text-gray-700">
                 Engineered backend architectures and frontend optimizations that reduced load times by 
@@ -60,7 +59,7 @@ function About() {
 
             <div className="p-4 bg-orange-50 rounded-lg border-l-4 border-orange-600">
               <h3 className="text-lg font-semibold text-orange-700 mb-2">
-                🎨 User-Centric Design Advocate
+                 User-Centric Design Advocate
               </h3>
               <p className="text-gray-700">
                 Transformed complex requirements into intuitive, mobile-first interfaces using React.js, Redux, 
@@ -70,7 +69,7 @@ function About() {
 
             <div className="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-600">
               <h3 className="text-lg font-semibold text-indigo-700 mb-2">
-                📈 Continuous Growth Mindset
+                Continuous Growth Mindset
               </h3>
               <p className="text-gray-700">
                 Actively contributing to the tech community through mentorship, conducting 
@@ -82,7 +81,7 @@ function About() {
 
         <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
           <h2 className="text-xl font-bold text-gray-900 mb-3">
-            💡 My Technical Philosophy
+             My Technical Philosophy
           </h2>
           <p className="text-gray-700 leading-relaxed">
             I believe in writing <span className="font-semibold">clean, maintainable code</span> that stands the test of time. 
@@ -205,8 +204,8 @@ function About() {
           </p>
         </div>
 
-        <div className="mt-8 p-6 bg-blue-600 text-white rounded-lg shadow-lg">
-          <h3 className="text-2xl font-bold mb-3">📊 Career Highlights</h3>
+        <div className="mt-4 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
+          <h3 className="text-2xl font-bold mb-3"> Career Highlights</h3>
           <ul className="space-y-2 text-lg">
             <li>✅ Led 10+ member development teams in agile environments</li>
             <li>✅ Architected AI-powered platforms serving thousands of users</li>
