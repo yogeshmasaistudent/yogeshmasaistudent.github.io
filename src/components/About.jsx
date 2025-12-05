@@ -15,7 +15,7 @@ function About() {
         </p>
 
         <p className="mt-4 text-base leading-relaxed text-gray-700">
-          As a <span className="font-semibold text-blue-600">Full Stack Web Developer</span> with a relentless passion for innovation, 
+          As a <span className="font-semibold text-blue-600">Full Stack Developer</span> with a relentless passion for innovation, 
           I specialize in building <span className="font-semibold">high-performance, scalable web applications</span> that solve 
           real business challenges. My expertise spans the entire development lifecycle — from conceptualizing user experiences 
           to architecting robust backend systems.
@@ -107,20 +107,20 @@ function About() {
 
           <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-200">
             <h3 className="font-semibold text-lg text-blue-700">
-              Full Stack Web Development - MERN Stack
+              Full Stack Web Development  Certification
             </h3>
             <p className="text-gray-600">
               Masai School, Bengaluru | HSR Layout, Karnataka 560102
             </p>
             <p className="text-sm text-gray-500">Completed: 2024</p>
             <p className="text-sm text-gray-600 mt-2">
-              1200+ hours of intensive coding | 450+ hours DSA mastery | 100+ hours soft skills
+              2100+ hours of intensive coding | 450+ hours DSA mastery | 100+ hours soft skills
             </p>
           </div>
 
           <div className="p-4 bg-white rounded-lg shadow-sm border border-gray-200">
             <h3 className="font-semibold text-lg text-blue-700">
-              Bachelor of Science (Mathematics)
+              Bachelor of Science 
             </h3>
             <p className="text-gray-600">Dr. Bhim Rao Ambedkar University, Agra</p>
             <p className="text-sm text-gray-500">Completed: December 2022</p>
@@ -189,11 +189,13 @@ function About() {
         <h2 className="text-2xl font-bold text-gray-900 mb-4 mt-8 border-b-2 border-blue-600 inline-block pb-2">
           Professional Journey
         </h2>
+
+
         
         <div className="mt-4 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
           <p className="text-gray-700 leading-relaxed text-lg">
-            With <span className="font-bold text-blue-700">2+ years of professional experience</span>, I'm proficient in both 
-            front-end and back-end technologies. My journey includes <span className="font-semibold">over 1200 hours of intensive coding practice</span> and 
+            With <span className="font-bold text-blue-700">3+ years of professional experience</span>, I'm proficient in both 
+            front-end and back-end technologies. My journey includes <span className="font-semibold">over 2100+ hours of intensive coding practice</span> and 
             <span className="font-semibold"> 450+ hours</span> dedicated to mastering Data Structures and Algorithms. 
             I specialize in crafting efficient, scalable solutions while maintaining a strong focus on clean code principles.
           </p>
@@ -203,6 +205,11 @@ function About() {
             at VIT</span>, I continue to stay ahead of emerging technologies while delivering production-ready applications.
           </p>
         </div>
+
+  
+
+
+
 
         <div className="mt-4 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200">
           <h3 className="text-2xl font-bold mb-3"> Career Highlights</h3>

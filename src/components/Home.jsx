@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import pic from "../assets/photo.jpg";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { ReactTyped } from "react-typed";
@@ -108,11 +108,26 @@ function Home() {
               />
             </div>
             <br />
-            <p className="text-sm md:text-md text-justify text-gray-700 leading-relaxed hover:text-gray-900 transition-colors duration-300">
-              I'm Yogesh Kushawah, a Full Stack Web Developer with 2 years of professional experience in building scalable web applications using the MERN stack. With expertise in both front-end and back-end technologies, I've led development teams, delivered AI-integrated platforms, and optimized full-stack solutions for real-world business challenges.
+ <p className="text-sm md:text-md text-justify text-gray-700 leading-relaxed hover:text-gray-900 transition-colors duration-300">
 
-              Currently pursuing my Master of Computer Applications (MCA) from Vellore Institute of Technology while working as a Full Stack Developer at Qurocity, I'm passionate about creating impactful and efficient web solutions.
-            </p>
+  I'm <span className="font-semibold">Yogesh Kushawah</span>, 
+  a <span className="font-semibold">Software Engineer & Full Stack Developer</span> <span></span>
+  with <span className="font-semibold">3+ years of experience</span> building scalable and 
+  high-performance web applications. I specialize in designing end-to-end solutions, 
+  leading development teams, and delivering <span className="font-semibold">AI-enabled platforms</span> <span></span>
+  that solve real business problems.
+
+  <br /><br />
+
+  Currently pursuing my 
+  <span className="font-semibold"> Master of Computer Applications (MCA) at VIT </span> 
+  while working as a 
+  <span className="font-semibold"> Full Stack Developer & Mentor at CodingGita</span>, 
+I focus on building efficient, user-centric, and robust software systems that drive measurable impact.
+
+
+</p>
+
             <br />
             <div className="flex justify-center">
               <button

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import html from "../assets/experience/html.png";
 import css from "../assets/experience/css.jpg";
 import javascript from "../assets/experience/javascript.png";
@@ -14,6 +14,9 @@ import mongodb from "../assets/experience/mongodb.jpg";
 import mysql from "../assets/experience/mysql.png";
 import github from "../assets/experience/github.png";
 import aws from "../assets/experience/aws.png";
+import nextjs from "../assets/experience/Nextjs.png";
+import figma from "../assets/experience/figma.png";
+import CICD from "../assets/experience/cicd.png";
 
 function Experience() {
   const [visibleCards, setVisibleCards] = useState([]);
@@ -35,11 +38,31 @@ function Experience() {
     { id: 13, logo: mysql, name: "MySQL", color: "from-blue-500 to-indigo-600" },
     { id: 14, logo: aws, name: "AWS", color: "from-yellow-600 to-orange-600" },
     { id: 15, logo: github, name: "Github", color: "from-gray-700 to-gray-900" },
+    { id: 16, logo: nextjs, name: "Next.js", color: "from-gray-600 to-gray-800" },
+    { id: 17, logo: figma, name: "Figma", color: "from-purple-500 to-pink-500" },
+    { id: 18, logo: CICD, name: "CI/CD", color: "from-green-600 to-green-800" },
+
   ];
 
   const workExperience = [
-    {
+     {
       id: 1,
+      role: "Full Stack Developer & Mentor",
+      company: "CodingGita",
+      duration: "Present",
+      type: "Full-time",
+      gradient: "from-purple-600 to-pink-600",
+      logo: "https://media.licdn.com/dms/image/v2/D560BAQHYpn0adop2zg/company-logo_200_200/company-logo_200_200/0/1695452246719?e=1766620800&v=beta&t=S4FN_YyYy7P2l5nbX6x3JLvbAfY1vGZA9SRM03LtcCU",
+      fallbackIcon: "💼",
+achievements: [
+  "Mentored aspiring developers in full-stack engineering",
+  "Conducted mock interviews and guided technical growth",
+  "Supported learners in building real-world projects",
+  "Provided feedback to improve coding and DSA skills",
+],
+    },
+    {
+      id: 2,
       role: "Full Stack Developer",
       company: "Qurocity",
       duration: "Dec 2024 - Sep 2025",
@@ -55,7 +78,7 @@ function Experience() {
       ],
     },
     {
-      id: 2,
+      id: 3,
       role: "Software Development Engineer",
       company: "WILYER PVT. LTD.",
       duration: "July 2024 - December 2024",
@@ -71,7 +94,7 @@ function Experience() {
       ],
     },
     {
-      id: 3,
+      id: 4,
       role: "Full Stack Developer",
       company: "Masai",
       duration: "July 2023 - June 2024",
@@ -86,7 +109,7 @@ function Experience() {
       ],
     },
     {
-      id: 4,
+      id: 5,
       role: "Full Stack Web Developer",
       company: "Solar Secure Solution",
       duration: "April 2023 - June 2023",
@@ -329,7 +352,7 @@ function Experience() {
       </div>
 
       {/* Keyframe Animations */}
-      <style jsx>{`
+      <style>{`
         @keyframes slideIn {
           from {
             opacity: 0;

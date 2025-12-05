@@ -1,5 +1,3 @@
-import React from "react";
-import { SiLeetcode } from "react-icons/si";
 import { FaXTwitter, FaLinkedinIn, FaGithub } from "react-icons/fa6";
 function Footer() {
   return (
@@ -22,9 +20,7 @@ function Footer() {
               <a href="https://x.com/yogeshkushawa10" target="_blank">
                 <FaXTwitter size={24} />
               </a>
-              <a href="https://leetcode.com/u/kushawahyogesh93/" target="_blank">
-                <SiLeetcode size={24} />
-              </a>
+              
             </div>
             <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col items-center">
               <p className="text-sm">
